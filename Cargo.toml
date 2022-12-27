@@ -17,12 +17,13 @@ env_logger = "0.7.1"
 pyo3 = "0.17.2"
 numpy = "0.17.2"
 ndarray = "0.13"
-onig = { version = "6.0", default-features = false }
 itertools = "0.9"
 
 [dependencies.tokenizers]
 version = "*"
 path = "./tokenizers-lib"
+default-features = false
+features = ["unstable_wasm"]
 
 [dev-dependencies]
 tempfile = "3.1"

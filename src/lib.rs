@@ -49,7 +49,7 @@ pub fn tokenizers(_py: Python, m: &PyModule) -> PyResult<()> {
     let _ = env_logger::try_init_from_env("TOKENIZERS_LOG");
 
     // Register the fork callback
-    #[cfg(target_family = "unix")]
+    #[cfg(all(target_family = "unix", not(target_family = "wasm")))]
     unsafe {
         if !REGISTERED_FORK_CALLBACK {
             libc::pthread_atfork(None, None, Some(child_after_fork));

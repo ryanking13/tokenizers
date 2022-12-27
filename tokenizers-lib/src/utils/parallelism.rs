@@ -28,7 +28,7 @@ pub fn get_parallelism() -> bool {
             v.make_ascii_lowercase();
             !matches!(v.as_ref(), "" | "off" | "false" | "f" | "no" | "n" | "0")
         }
-        Err(_) => true, // If we couldn't get the variable, we use the default
+        Err(_) => false, // If we couldn't get the variable, we use the default
     }
 }
 

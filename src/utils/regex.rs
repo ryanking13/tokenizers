@@ -1,4 +1,4 @@
-use onig::Regex;
+use tk::utils::SysRegex as Regex;
 use pyo3::exceptions;
 use pyo3::prelude::*;
 
